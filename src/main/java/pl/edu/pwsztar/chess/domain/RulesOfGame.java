@@ -31,6 +31,44 @@ interface RulesOfGame {
         }
     }
 
+    class King implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(Point source, Point destination) {
+            if((destination.getX() == source.getX() + 1 || destination.getX() == source.getX() - 1) && (destination.getY() == source.getY() + 1 || destination.getY() == source.getY() - 1)){
+                return true;
+            }
+            return false;
+        }
+    }
+
+    class Queen implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(Point source, Point destination) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    class Rock implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(Point source, Point destination) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    class Pawn implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(Point source, Point destination) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
     // TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rook, Pawn
     // TODO: Prosze stosowac zaproponowane nazwy klas !!!
     // TODO: Kazda klasa powinna implementowac interfejs RulesOfGame
