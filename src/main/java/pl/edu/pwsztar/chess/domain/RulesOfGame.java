@@ -35,7 +35,7 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            if((destination.getX() == source.getX() + 1 || destination.getX() == source.getX() - 1) && (destination.getY() == source.getY() + 1 || destination.getY() == source.getY() - 1)){
+            if((destination.getX() == source.getX() || destination.getX() == source.getX() + 1 || destination.getX() == source.getX() - 1) && (destination.getY() == source.getY() || destination.getY() == source.getY() + 1 || destination.getY() == source.getY() - 1)){
                 return true;
             }
             return false;
