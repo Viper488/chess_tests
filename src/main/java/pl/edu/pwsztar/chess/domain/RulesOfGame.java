@@ -26,7 +26,6 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            // TODO: Prosze dokonczyc implementacje
             return true;
         }
     }
@@ -35,10 +34,12 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            if((destination.getX() == source.getX() || destination.getX() == source.getX() + 1 || destination.getX() == source.getX() - 1) && (destination.getY() == source.getY() || destination.getY() == source.getY() + 1 || destination.getY() == source.getY() - 1)){
-                return true;
-            }
-            return false;
+            return (destination.getX() == source.getX() ||
+                    destination.getX() == source.getX() + 1 ||
+                    destination.getX() == source.getX() - 1) &&
+                    (destination.getY() == source.getY() ||
+                            destination.getY() == source.getY() + 1 ||
+                            destination.getY() == source.getY() - 1);
         }
     }
 
@@ -46,8 +47,16 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if((destination.getY() == source.getY() && destination.getX() != source.getX())
+                    || (destination.getX() == source.getX() && destination.getY() != source.getY())){
+                return true;
+            }
+            else if(Math.abs(destination.getX() - source.getX()) ==
+                    Math.abs(destination.getY() - source.getY()))
+            {
+                return true;
+            }
+            return false;
         }
     }
 
@@ -55,8 +64,8 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return (destination.getY() == source.getY() && destination.getX() != source.getX())
+                    || (destination.getX() == source.getX() && destination.getY() != source.getY());
         }
     }
 
@@ -64,8 +73,7 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return destination.getX() != source.getX() && destination.getY() == source.getY();
         }
     }
 

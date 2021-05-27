@@ -18,7 +18,7 @@ public class KnightTest {
             "6,  4, 7,   5 ",
             " 4,  3,  3,  4 ",
     })
-    void checkCorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkCorrectMoveForKnight(int xStart, int yStart, int xStop, int yStop) {
         assertTrue(knight.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 
@@ -27,7 +27,7 @@ public class KnightTest {
             "0,  1,  6,   7",
             "2, 0, 3,  2"
     })
-    void checkIncorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkIncorrectMoveForKnight(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(knight.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 }

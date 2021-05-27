@@ -14,11 +14,11 @@ public class RockTest {
     @ParameterizedTest
     @CsvSource({
             " 0,  0,  0,  10",
-            "-1, -1, -1, -9",
+            "-1, -1, 3, -1",
             "6,  4, 6,   -6 ",
             " 4,  3,  -4,  3 ",
     })
-    void checkCorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkCorrectMoveForRock(int xStart, int yStart, int xStop, int yStop) {
         assertTrue(rock.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 
@@ -27,7 +27,7 @@ public class RockTest {
             "0,  0,  7,   7",
             "-4, -2, -6,  -3"
     })
-    void checkIncorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkIncorrectMoveForRock(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(rock.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 }

@@ -18,7 +18,7 @@ public class QueenTest {
             "6,  4, 3,   1 ",
             " 4,  3,  -6,  3 ",
     })
-    void checkCorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkCorrectMoveForQueen(int xStart, int yStart, int xStop, int yStop) {
         assertTrue(queen.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 
@@ -27,7 +27,7 @@ public class QueenTest {
             "0,  1,  2,   0",
             "-4, -2, -6,  -3"
     })
-    void checkIncorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkIncorrectMoveForQueen(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(queen.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 }

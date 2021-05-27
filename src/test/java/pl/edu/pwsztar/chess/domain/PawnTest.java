@@ -13,21 +13,21 @@ public class PawnTest {
     @Tag("Pawn")
     @ParameterizedTest
     @CsvSource({
-            " 0,  0,  0,  1",
-            "-1, -1, -1, 0",
-            "6,  4, 6,   5 ",
-            " 4,  3,  4,  4 ",
+            " 0,  0,  1,  0",
+            "-1, -1, 0, -1",
+            "6,  6, 5,   6 ",
+            " 4,  3,  5,  3 ",
     })
-    void checkCorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkCorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop) {
         assertTrue(pawn.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 
     @ParameterizedTest
     @CsvSource({
-            "0,  1,  -1,   1",
+            "0,  1,  -1,   0",
             "2, 0, 3,  1"
     })
-    void checkIncorrectMoveForBishop(int xStart, int yStart, int xStop, int yStop) {
+    void checkIncorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(pawn.isCorrectMove(new Point(xStart, yStart), new Point(xStop, yStop)));
     }
 }

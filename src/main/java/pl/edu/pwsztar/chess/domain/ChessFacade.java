@@ -20,6 +20,9 @@ public class ChessFacade {
         bishop = new RulesOfGame.Bishop();
         knight = new RulesOfGame.Knight();
         king = new RulesOfGame.King();
+        queen = new RulesOfGame.Queen();
+        rock = new RulesOfGame.Rock();
+        pawn = new RulesOfGame.Pawn();
         // ...
     }
 
@@ -31,13 +34,17 @@ public class ChessFacade {
         // refaktoryzacja?
         switch (figureMoveDto.getType()) {
             case BISHOP:
-                // wywolaj konwerter punktow oraz popraw ponizszy kod
                 return bishop.isCorrectMove(source, destination);
             case KNIGHT:
-                // wywolaj konwerter punktow oraz popraw ponizszy kod
                 return knight.isCorrectMove(source, destination);
             case KING:
                 return king.isCorrectMove(source, destination);
+            case PAWN:
+                return pawn.isCorrectMove(source, destination);
+            case ROCK:
+                return rock.isCorrectMove(source, destination);
+            case QUEEN:
+                return queen.isCorrectMove(source, destination);
         }
 
         return false;
