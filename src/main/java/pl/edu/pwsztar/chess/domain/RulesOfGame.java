@@ -26,7 +26,7 @@ interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(Point source, Point destination) {
-            return true;
+            return (Math.abs(destination.getX() - source.getX()) * Math.abs(destination.getY() - source.getY())) == 2;
         }
     }
 

@@ -8,8 +8,8 @@ public class ChessConfiguration {
 
     @Bean
     ChessFacade filmFacade() {
-
+        ChessMap chessMap = new ChessMap();
         ChessCreator chessCreator = new ChessCreator();
-        return new ChessFacade(chessCreator);
+        return new ChessFacade(chessCreator, chessMap);
     }
 }
